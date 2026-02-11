@@ -1,0 +1,93 @@
+.spinner {
+    /* Inline flex: Yanyana durabildigi gibi flex de kullanabilir */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.svg {
+    /* SVG animasyon uygula */
+    animation: rotate 1s linear infinite;
+    /* 1s: 1 saniyede tam tur */
+    /* linear: Sabit hız */
+    /* infinite: Sonsuz döngü */
+}
+
+/* SVG dönme animasyonu */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.circle {
+    /* Stroke dash array: Kesik çizgi efekti */
+    stroke-dasharray: 90, 150;
+    /* 90px çizgi, 150px boşluk */
+
+    /* Stroke dash offset: Animasyon başlangıç noktası */
+    stroke-dashoffset: 0;
+
+    /* Çizgi ucu yuvarlak */
+    stroke-linecap: round;
+
+    /* Circle kendi içinde animasyon */
+    animation: dash 1.5s ease-in-out infinite;
+    /* 1.5s: SVG dönmeden daha yavaş (farklı hız = dinamik görünüm) */
+}
+
+/* Circle dash animasyonu (çizgi uzayıp kısalır) */
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+.small {
+    width: 16px;
+    height: 16px;
+}
+
+.medium {
+    width: 24px;
+    height: 24px;
+}
+
+.large {
+    width: 40px;
+    height: 40px;
+}
+.primary .circle {
+    stroke: var(--color-primary);
+}
+
+.accent .circle {
+    stroke: var(--color-accent);
+}
+
+.white .circle {
+    stroke: var(--color-text-primary);
+}
+.srOnly {
+    /* Görünmez ama screen reader okur */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
