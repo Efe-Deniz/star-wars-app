@@ -27,7 +27,7 @@ export interface StarshipApiResponse {
 }
 
 export interface SwapiPaginatedResponse<T> {
-    conut: number;
+    count: number;
     next: string | null;
     previous: string | null;
     results: T[];
