@@ -1,0 +1,83 @@
+.card {
+    /* Card height consistent */
+    display: flex;
+    flex-direction: column;
+    min-height: 240px;
+    transition: all var(--transition-base);
+}
+
+.header {
+    margin-bottom: var(--space-3);
+}
+
+.name {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+    line-height: var(--leading-tight);
+}
+
+.class {
+    display: inline-block;
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-tertiary);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.model {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-normal);
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+    flex-grow: 1;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.statLabel {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.statValue {
+    font-size: var(--text-base);
+    color: var(--color-text-primary);
+    font-weight: var(--font-semibold);
+}
+
+.footer {
+    margin-top: auto;
+    padding-top: var(--space-3);
+}
+
+.hint {
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+/* Show hint on hover */
+.card:hover .hint {
+    opacity: 1;
+}
