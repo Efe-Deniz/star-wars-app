@@ -3,7 +3,7 @@ import styles from './Spinner.module.css';
 interface SpinnerProps {
     //-size:Spinner boyutu
     //-color:spinner rengini alacak
-    size: 'small' | 'medium' | 'large';
+    size?: 'small' | 'medium' | 'large';
     color?: 'primary' | 'accent' | 'white';
 }
 
